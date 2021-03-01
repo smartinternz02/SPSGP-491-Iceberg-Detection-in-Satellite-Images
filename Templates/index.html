@@ -1,0 +1,153 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Artificial Intelligence</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet"> 
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main6.css')}}">	
+<style>
+.moveright {
+    text-align:right;
+	}
+	.moveleft {
+    text-align:left;
+	}
+.movecenter{
+    text-align: center;
+}
+.movejustify{
+    text-align: justify;
+}
+.images_span{
+    padding: 40px;
+}
+.detect{
+    padding-left: 275px;
+    padding-right: 200px;
+    word-spacing: 20px;
+}
+.button{
+background-color:blue;
+color:white;
+}
+div.ex1{
+    
+	padding:25px;
+	width:30px;
+	background-color:yellow;
+	}
+div.ex2{
+    background-color:rgb(0,191,255);
+    color:rgb(162,0,175);
+	padding:35px;
+	}
+.heading_bar{
+    padding-right: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.navigation-buttons{
+    padding-right : 50px;
+}
+.bg-dark {
+		background-color: #42678c!important;
+	}
+#result {
+		color: orange;
+		}
+
+ </style>   
+ <script>
+ function pageRedirect(){
+ window.location.href="https://www.britannica.com/science/iceberg/Iceberg-detection-tracking-and-management"
+ }
+ function pageRedirect2(){
+ window.location.href="https://en.wikipedia.org/wiki/List_of_ships_sunk_by_icebergs"
+ }
+ </script>
+</head>
+
+
+<body style="background-color: rgb(235, 217, 235);">
+ 
+        <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+		    <div class="heading_bar">
+                <a href="#" style="color:white; font-size: x-large;"><strong>ICEBERG DETECTION</strong></a>
+            </div>
+            <div class="navigation-buttons">
+                <button class="btn btn-primary btn-lg " type="button" onclick="pageRedirect()">Info</button>
+			    <button class="btn btn-primary btn-lg " type="button" onclick="pageRedirect2()">Case-Study</button>
+		    </div>
+        </div>
+		</nav>	
+    
+<h2 style="color:red" ><strong>What is the Importance of detecting iceberg ?</strong></h2>
+<p class="movejustify">Icebergs present serious hazards for ship navigation and offshore installations. Consequently, there is a large interest to localize them timely and over vast areas. Because of their independence of cloud cover and daylight, satellite Synthetic Aperture Radar (SAR) images are among the preferred data sources for operational ice conditions and iceberg occurrences. </p>
+<h2  class="movejustify" style="color:rgb(255, 0, 55)">What is the need to detect Iceberg?</h2>
+<p class="moveleft">The methods of satellite monitoring of dangerous ice formations, like icebergs in the Arctic seas represent a threat to the safety of navigation and economic activity on the Arctic shelf.</p>
+
+<br>
+<br>
+<br>
+
+<h2 class="movecenter" style="color:blue">Images of <strong> Ship</strong> hitting<strong> Iceberg</strong></h2> 
+<span class="images_span">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOLveW5N5bKvw_Pm3hsE0_fyieNhMfAPKWfQ&usqp=CAU",alt="img1" width="250" height="200">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ8y445Rd08FK4-Mto3xvqkt3MKf4fxA9q1pA&usqp=CAU",alt="img2" width="250" height="200">
+<img src="https://media1.s-nbcnews.com/j/msnbc/Components/Photo_StoryLevel/071123/071123_explorer_hmed_9p.fit-760w.jpg" alt="img3" width="250" height="200">
+<img src="https://i.ytimg.com/vi/lHDia6SVWhc/hqdefault.jpg" alt="img4" width="250" height="200">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmReYH5G3ea8abgPrvjRB16vtNbBgo_Aj5HQ&usqp=CAU",alt="img5" width="250" height="200">
+</span>
+<br>
+<br>
+<br>
+<h2 class="movecenter">Detect the image</h2>
+<span style="color:black" class="detect">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQlsQMi3IG1VVuYIgG2l6RP78_h_cBMr8mA8A&usqp=CAU",alt="ice" width="300" height="250">
+<strong>ICE</strong> <em>OR</em> <strong>SHIP</strong>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT2vejUS44qNmWxka7-Vp-ReT47eRI48TTOJQ&usqp=CAU",alt="ship" width="300" height="250">
+</span>
+</div>
+<br>
+<br>
+<h4 class="movecenter" style="color:black">Upload Image Here</h4>
+<div class="movecenter">
+    <form action="http:/localhost:5000/predict" id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Choose...
+        </label>
+        <input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display: block;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:block"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+	
+
+</div>
+</body>
+
+<footer>
+<script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>    
+</footer>
+
+</html>
